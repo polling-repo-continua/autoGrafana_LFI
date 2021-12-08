@@ -1,7 +1,8 @@
-# autoGrafana_LFI
-A script for automating grapfana LFI CVE Exploitaion, by using a targets list to check the existince of the CVE Instead of testing every single target
+# Description:
 
-# Usage
+A script for automating grapfana LFI CVE Exploitaion, by using a targets list to check the existince of the CVE Instead of testing every single target with variuos HTTP methods.
+
+# Usage:
 
 ```
 ./autoGrafana <Targets List> <HTTP Method>
